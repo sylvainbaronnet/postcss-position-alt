@@ -1,6 +1,6 @@
 {
   "name": "postcss-position-alt",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "PostCSS plugin that adds shorthand to position declarations",
   "keywords": [
     "postcss",
