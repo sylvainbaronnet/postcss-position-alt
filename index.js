@@ -5,6 +5,11 @@ var postcss = require('postcss');
 module.exports = postcss.plugin('postcss-position-alt', function (opts) {
   opts = opts || {};
 
+  var isUnit = function(value)
+  {
+    return (/\d/.test(value) || value === 'auto' || value === 'inherit');
+  }
+
   return function (css, result) {
 
     css.walkDecls(/^absolute|relative|fixed/, function (decl) {
@@ -29,11 +34,18 @@ module.exports = postcss.plugin('postcss-position-alt', function (opts) {
       while(i < 8) {
 
         if (pos[i]) {
-          if (!PROP && !/\d/.test(pos[i])) {
+          if (!PROP && !isUnit(pos[i])) {
             PROP = pos[i];
+            i++;
           }
           else {
-            VAL = /\d/.test(pos[i]) ? pos[i] : '0';
+            if (isUnit(pos[i])) {
+              VAL = pos[i];
+              i++;
+            }
+            else {
+              VAL = '0'
+            }
           }
         }
         else if (PROP) {
@@ -52,8 +64,6 @@ module.exports = postcss.plugin('postcss-position-alt', function (opts) {
           PROP = false;
           VAL  = false;
         }
-
-        i++;
       }
 
     });

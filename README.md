@@ -14,13 +14,15 @@ See [postcss-position](https://github.com/seaneking/postcss-position) for an alt
 /* Input example */
 .foo {
     absolute: top left;
-
 }
 .bar {
     absolute: bottom 10px right;
 }
 .baz {
     fixed: top left 10px;
+}
+.fab {
+    fixed: bottom auto left 10%;
 }
 ```
 
@@ -40,6 +42,11 @@ See [postcss-position](https://github.com/seaneking/postcss-position) for an alt
   position: fixed;
   top: 0;
   left: 10px;
+}
+.fab {
+  position: fixed;
+  bottom: auto;
+  left: 10%;
 }
 ```
 
