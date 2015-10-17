@@ -1,4 +1,6 @@
-# Postcss position alt [![NPM version][npm-image]][npm-url] [![Build Status][ci-img]][ci] [![Dependency Status][daviddm-image]][daviddm-url]
+# Postcss-position-alt
+
+[![NPM version][npm-image]][npm-url] [![Build Status][ci-img]][ci] [![Dependency Status][daviddm-image]][daviddm-url]
 
 [PostCSS] plugin that adds shorthand to position declarations.
 
