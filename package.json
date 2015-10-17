@@ -8,8 +8,14 @@
     "postcss-plugin"
   ],
   "author": "Sylvain Baronnet <sylvain@studio.gd>",
+  "maintainers": [
+    "Sylvain Baronnet <sylvain@studio.gd> (http://studio.gd)"
+  ],
   "license": "MIT",
-  "repository": "sylvainbaronnet/postcss-position-alt",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sylvainbaronnet/postcss-position-alt.git"
+  },
   "bugs": {
     "url": "https://github.com/sylvainbaronnet/postcss-position-alt/issues"
   },
@@ -25,5 +31,9 @@
   },
   "scripts": {
     "test": "gulp"
+  },
+  "main": "index.js",
+  "directories": {
+    "test": "test"
   }
 }
