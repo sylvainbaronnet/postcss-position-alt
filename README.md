@@ -5,7 +5,7 @@
 [PostCSS]: https://github.com/postcss/postcss
 [ci-img]:  https://travis-ci.org/sylvainbaronnet/postcss-position-alt.svg
 [ci]:      https://travis-ci.org/sylvainbaronnet/postcss-position-alt
-
+[npm-url]: https://www.npmjs.com/package/postcss-position-alt
 
 See [postcss-position](https://github.com/seaneking/postcss-position) for an alternative shorthand syntax.
 
