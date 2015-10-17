@@ -1,10 +1,13 @@
 # Postcss position alt [![Build Status][ci-img]][ci]
 
-[PostCSS] plugin adds shorthand to position declarations.
+[PostCSS] plugin that adds shorthand to position declarations.
 
 [PostCSS]: https://github.com/postcss/postcss
 [ci-img]:  https://travis-ci.org/sylvainbaronnet/postcss-position-alt.svg
 [ci]:      https://travis-ci.org/sylvainbaronnet/postcss-position-alt
+
+
+See [postcss-position](https://github.com/seaneking/postcss-position) for an alternative shorthand syntax.
 
 ```css
 
@@ -14,7 +17,7 @@
 
 }
 .bar {
-    absolute: bottom 10px right
+    absolute: bottom 10px right;
 }
 .baz {
     fixed: top left 10px;

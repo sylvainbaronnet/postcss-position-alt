@@ -1,19 +1,19 @@
 {
-  "name": "PLUGIN_NAME",
+  "name": "postcss-position-alt",
   "version": "0.0.0",
-  "description": "PostCSS plugin PLUGIN_DESC",
+  "description": "PostCSS plugin that adds shorthand to position declarations",
   "keywords": [
     "postcss",
     "css",
-    "postcss-plugin"KEYWORDS
+    "postcss-plugin"
   ],
-  "author": "AUTHOR_NAME <AUTHOR_EMAIL>",
+  "author": "Sylvain Baronnet <sylvain@studio.gd>",
   "license": "MIT",
-  "repository": "GITHUB_NAME/PLUGIN_NAME",
+  "repository": "sylvainbaronnet/postcss-position-alt",
   "bugs": {
-    "url": "https://github.com/GITHUB_NAME/PLUGIN_NAME/issues"
+    "url": "https://github.com/sylvainbaronnet/postcss-position-alt/issues"
   },
-  "homepage": "https://github.com/GITHUB_NAME/PLUGIN_NAME",
+  "homepage": "https://github.com/sylvainbaronnet/postcss-position-alt",
   "dependencies": {
     "postcss": "^5.0.2"
   },
