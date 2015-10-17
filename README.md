@@ -6,6 +6,7 @@
 [ci-img]:  https://travis-ci.org/sylvainbaronnet/postcss-position-alt.svg
 [ci]:      https://travis-ci.org/sylvainbaronnet/postcss-position-alt
 [npm-url]: https://www.npmjs.com/package/postcss-position-alt
+[npm-image]: https://badge.fury.io/js/postcss-position.svg
 
 See [postcss-position](https://github.com/seaneking/postcss-position) for an alternative shorthand syntax.
 
