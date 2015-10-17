@@ -1,4 +1,4 @@
-# Postcss position alt [![NPM version][npm-image]][npm-url] [![Build Status][ci-img]][ci]
+# Postcss position alt [![NPM version][npm-image]][npm-url] [![Build Status][ci-img]][ci] [![Dependency Status][daviddm-image]][daviddm-url]
 
 [PostCSS] plugin that adds shorthand to position declarations.
 
@@ -7,6 +7,8 @@
 [ci]:      https://travis-ci.org/sylvainbaronnet/postcss-position-alt
 [npm-url]: https://www.npmjs.com/package/postcss-position-alt
 [npm-image]: https://badge.fury.io/js/postcss-position.svg
+[daviddm-image]: https://david-dm.org/sylvainbaronnet/postcss-position-alt.svg
+[daviddm-url]: https://david-dm.org/sylvainbaronnet/postcss-position-alt
 
 See [postcss-position](https://github.com/seaneking/postcss-position) for an alternative shorthand syntax.
 
