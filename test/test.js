@@ -70,5 +70,10 @@ describe('postcss-position-alt', function () {
            'a{ position: fixed; top: inherit; left: 0; }', { }, done);
     });
 
+    it('test simple 6', function (done) {
+      test('a{ fixed: left top right bottom; }',
+           'a{ position: fixed; bottom: 0; right: 0; top: 0; left: 0; }', { }, done);
+    });
+
 
 });
