@@ -38,14 +38,12 @@ module.exports = postcss.plugin('postcss-position-alt', function (opts) {
             PROP = pos[i];
             i++;
           }
+          else if (isUnit(pos[i])) {
+            VAL = pos[i];
+            i++;
+          }
           else {
-            if (isUnit(pos[i])) {
-              VAL = pos[i];
-              i++;
-            }
-            else {
-              VAL = '0'
-            }
+            VAL = '0'
           }
         }
         else if (PROP) {
