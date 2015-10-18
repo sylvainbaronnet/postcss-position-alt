@@ -1,6 +1,12 @@
 # Postcss-position-alt
 
-[![NPM version][npm-image]][npm-url] [![Build Status][ci-img]][ci] [![Dependency Status][daviddm-image]][daviddm-url]
+<img align="right" width="135" height="95"
+  title="Philosopher’s stone, logo of PostCSS"
+  src="http://postcss.github.io/postcss/logo-leftp.png">
+
+[![NPM version][npm-image]][npm-url] [![npm license](http://img.shields.io/npm/l/postcss-position-alt.svg)](https://www.npmjs.org/package/postcss-position-alt) [![Build Status][ci-img]][ci] [![Dependency Status][daviddm-image]][daviddm-url]
+
+[![npm](https://nodei.co/npm/postcss-position-alt.svg)](https://nodei.co/npm/postcss-position-alt/)
 
 [PostCSS] plugin that adds shorthand to position declarations.
 
@@ -12,7 +18,7 @@
 [daviddm-image]: https://david-dm.org/sylvainbaronnet/postcss-position-alt.svg
 [daviddm-url]: https://david-dm.org/sylvainbaronnet/postcss-position-alt
 
-See [postcss-position](https://github.com/seaneking/postcss-position) for an alternative shorthand syntax.
+*See [postcss-position](https://github.com/seaneking/postcss-position) for an alternative shorthand syntax.*
 
 ```css
 
