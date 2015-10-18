@@ -8,7 +8,7 @@ module.exports = postcss.plugin('postcss-position-alt', function (opts) {
   var isUnit = function(value)
   {
     return (/\d/.test(value) || value === 'auto' || value === 'inherit');
-  }
+  };
 
   return function (css, result) {
 

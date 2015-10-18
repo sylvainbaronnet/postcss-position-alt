@@ -40,4 +40,10 @@ describe('postcss-position-alt', function () {
            'a{ position: relative; top: -1px; }', { }, done);
     });
 
+    it('test final', function (done) {
+      test('a{ absolute: top -1.5rem left right auto bottom; }',
+           'a{ position: absolute; bottom: 0; right: auto; left: 0; top: -1.5rem; }', { }, done);
+    });
+
+
 });
