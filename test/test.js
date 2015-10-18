@@ -40,9 +40,34 @@ describe('postcss-position-alt', function () {
            'a{ position: relative; top: -1px; }', { }, done);
     });
 
-    it('test final', function (done) {
+    it('test with different values', function (done) {
       test('a{ absolute: top -1.5rem left right auto bottom; }',
            'a{ position: absolute; bottom: 0; right: auto; left: 0; top: -1.5rem; }', { }, done);
+    });
+
+    it('test simple 1', function (done) {
+      test('a{ absolute: left 1px; }',
+           'a{ position: absolute; left: 1px; }', { }, done);
+    });
+
+    it('test simple 2', function (done) {
+      test('a{ fixed: top; }',
+           'a{ position: fixed; top: 0; }', { }, done);
+    });
+
+    it('test simple 3', function (done) {
+      test('a{ relative: top auto; }',
+           'a{ position: relative; top: auto; }', { }, done);
+    });
+
+    it('test simple 4', function (done) {
+      test('a{ fixed: top inherit; }',
+           'a{ position: fixed; top: inherit; }', { }, done);
+    });
+
+    it('test simple 5', function (done) {
+      test('a{ fixed: left top inherit; }',
+           'a{ position: fixed; top: inherit; left: 0; }', { }, done);
     });
 
 
