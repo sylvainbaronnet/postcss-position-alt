@@ -18,22 +18,22 @@
 [daviddm-image]: https://david-dm.org/sylvainbaronnet/postcss-position-alt.svg
 [daviddm-url]: https://david-dm.org/sylvainbaronnet/postcss-position-alt
 
-*See [postcss-position](https://github.com/seaneking/postcss-position) for an alternative shorthand syntax.*
+
 
 ```css
 
 /* Input example */
 .foo {
-    absolute: top left;
+  absolute: top left;
 }
 .bar {
-    absolute: bottom 10px right;
+  absolute: bottom 10px right;
 }
 .baz {
-    fixed: top left 10px;
+  fixed: top left 10px;
 }
 .fab {
-    fixed: bottom auto left 10%;
+  fixed: bottom auto left 10%;
 }
 ```
 
@@ -68,3 +68,8 @@ postcss([ require('postcss-position-alt') ])
 ```
 
 See [PostCSS] docs for examples for your environment.
+
+
+## Alternative 
+
+*See [postcss-position](https://github.com/seaneking/postcss-position) for an alternative shorthand syntax.*
