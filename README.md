@@ -27,13 +27,16 @@
   absolute: top left;
 }
 .bar {
-  absolute: bottom 10px right;
+  absolute: bottom 10px right z-index 1;
 }
 .baz {
   fixed: top left 10px;
 }
 .fab {
   fixed: bottom auto left 10%;
+}
+.toto {
+  fixed: top left bottom right z-index 9999;
 }
 ```
 
@@ -48,6 +51,7 @@
   position: absolute;
   bottom: 10px;
   right: 0;
+  z-index: 1;
 }
 .baz {
   position: fixed;
@@ -58,6 +62,14 @@
   position: fixed;
   bottom: auto;
   left: 10%;
+}
+.toto {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 9999;
 }
 ```
 

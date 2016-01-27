@@ -75,5 +75,14 @@ describe('postcss-position-alt', function () {
            'a{ position: fixed; bottom: 0; right: 0; top: 0; left: 0; }', { }, done);
     });
 
+    it('test z-index simple', function (done) {
+      test('a{ fixed: left top z-index 12; }',
+           'a{ position: fixed; z-index: 12; top: 0; left: 0; }', { }, done);
+    });
+    it('test z-index complex', function (done) {
+      test('a{ fixed: left top z-index 12 right auto; }',
+           'a{ position: fixed; right: auto; z-index: 12; top: 0; left: 0; }', { }, done);
+    });
+
 
 });
