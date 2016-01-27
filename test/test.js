@@ -83,6 +83,22 @@ describe('postcss-position-alt', function () {
       test('a{ fixed: left top z-index 12 right auto; }',
            'a{ position: fixed; right: auto; z-index: 12; top: 0; left: 0; }', { }, done);
     });
+    it('test css var', function (done) {
+      test('a{ fixed: left top var(--some-var); }',
+           'a{ position: fixed; top: var(--some-var); left: 0; }', { }, done);
+    });
+    it('test revert and initial value', function (done) {
+      test('a{ fixed: left revert top initial; }',
+           'a{ position: fixed; top: initial; left: revert; }', { }, done);
+    });
+    it('test properties aliases', function (done) {
+      test('a{ fixed: l 1% t b auto r 12px z 12; }',
+           'a{ position: fixed; z-index: 12; right: 12px; bottom: auto; top: 0; left: 1%; }', { }, done);
+    });
+    it('test properties aliases mixed with normal properties', function (done) {
+      test('a{ fixed: l 1% top b auto r 12px z-index 12; }',
+           'a{ position: fixed; z-index: 12; right: 12px; bottom: auto; top: 0; left: 1%; }', { }, done);
+    });
 
 
 });
