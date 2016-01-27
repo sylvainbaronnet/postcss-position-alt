@@ -23,47 +23,50 @@
 ```css
 
 /* Input example */
-.foo {
+.alpha {
   absolute: top left;
 }
-.bar {
+.beta {
   absolute: bottom 10px right z-index 1;
 }
-.baz {
+.gamma {
   fixed: top left 10px;
 }
-.fab {
+.delta {
   fixed: bottom auto left 10%;
 }
-.toto {
+.epsilon {
   fixed: top left bottom right z-index 9999;
+}
+.zeta {
+  relative: top var(--some-var) left initial bottom revert;
 }
 ```
 
 ```css
 /* Output example */
-.foo {
+.alpha {
   position: absolute;
   top: 0;
   left: 0;
 }
-.bar {
+.beta {
   position: absolute;
   bottom: 10px;
   right: 0;
   z-index: 1;
 }
-.baz {
+.gamma {
   position: fixed;
   top: 0;
   left: 10px;
 }
-.fab {
+.delta {
   position: fixed;
   bottom: auto;
   left: 10%;
 }
-.toto {
+.epsilon {
   position: fixed;
   top: 0;
   left: 0;
@@ -71,8 +74,33 @@
   right: 0;
   z-index: 9999;
 }
+.zeta {
+  position: relative;
+  top: var(--some-var);
+  left: initial;
+  bottom: revert;
+}
 ```
 
+It support those properties aliases :
+
+```css
+.aliases {
+  absolute t 1px l 2px b 3px r 4px z 5
+}
+
+/* Output */
+.aliases {
+  position: absolute;
+  top: 1px;
+  left: 2px;
+  bottom: 3px;
+  right: 4px;
+  z-index: 5;
+}
+
+
+```
 ## Usage
 
 ```js
