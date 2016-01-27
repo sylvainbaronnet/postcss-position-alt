@@ -5,9 +5,8 @@ var postcss = require('postcss');
 module.exports = postcss.plugin('postcss-position-alt', function (opts) {
   opts = opts || {};
 
-  var isUnit = function(value)
-  {
-    return (/\d/.test(value) || value === 'auto' || value === 'inherit');
+  var isUnit = function (value) {
+    return (/\d/.test(value) || /^var|auto|inherit|initial|revert/.test(value));
   };
 
   return function (css, result) {
@@ -31,7 +30,7 @@ module.exports = postcss.plugin('postcss-position-alt', function (opts) {
           PROP = false,
           VAL  = false;
 
-      while(i < 8) {
+      while (i < 8) {
 
         if (pos[i]) {
           if (!PROP && !isUnit(pos[i])) {
@@ -54,6 +53,7 @@ module.exports = postcss.plugin('postcss-position-alt', function (opts) {
         }
 
         if (PROP !== false && VAL !== false) {
+
           decl.cloneAfter({
             prop: PROP,
             value: VAL
