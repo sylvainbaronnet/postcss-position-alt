@@ -54,6 +54,15 @@ module.exports = postcss.plugin('postcss-position-alt', function (opts) {
 
         if (PROP !== false && VAL !== false) {
 
+          if (PROP.length === 1) {
+            
+            PROP = PROP.replace(/t/i, 'top')
+                       .replace(/l/i, 'left')
+                       .replace(/b/i, 'bottom')
+                       .replace(/r/i, 'right')
+                       .replace(/z/i, 'z-index');
+          }
+
           decl.cloneAfter({
             prop: PROP,
             value: VAL
