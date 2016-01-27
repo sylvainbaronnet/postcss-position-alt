@@ -4,7 +4,7 @@
   title="Philosopher’s stone, logo of PostCSS"
   src="http://postcss.github.io/postcss/logo-leftp.png">
 
-[![NPM version][npm-image]][npm-url] [![npm license](http://img.shields.io/npm/l/postcss-position-alt.svg)](https://www.npmjs.org/package/postcss-position-alt) [![Build Status][ci-img]][ci] [![Dependency Status][daviddm-image]][daviddm-url]
+[![NPM version][npm-image]][npm-url] [![Build Status][ci-img]][ci] [![Dependency Status][daviddm-image]][daviddm-url]
 
 [![npm](https://nodei.co/npm/postcss-position-alt.svg?)](https://nodei.co/npm/postcss-position-alt/)
 
