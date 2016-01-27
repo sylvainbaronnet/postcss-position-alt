@@ -30,7 +30,7 @@ module.exports = postcss.plugin('postcss-position-alt', function (opts) {
           PROP = false,
           VAL  = false;
 
-      while (i < 8) {
+      while (i < 14) {
 
         if (pos[i]) {
           if (!PROP && !isUnit(pos[i])) {
