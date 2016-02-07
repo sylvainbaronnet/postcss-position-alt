@@ -98,9 +98,20 @@ It support those properties aliases :
   right: 4px;
   z-index: 5;
 }
+```
 
+It works with [postcss-center](https://github.com/jedmao/postcss-center) :
+
+```css
+.center {
+  absolute left center top center
+}
 
 ```
+
+postcss-center must be applied _after_ postcss-position-alt
+
+
 ## Usage
 
 ```js
