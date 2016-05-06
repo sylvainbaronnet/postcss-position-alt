@@ -109,6 +109,25 @@ describe('postcss-position-alt', function () {
            'a{ top: 10px; bottom: 40px; right: 30px; left: 20px; }', { }, done);
     });
 
+    it('test position shortcut with no first value', function (done) {
+      test('a{ top: left 20px right bottom 40px; }',
+           'a{ top: 0; bottom: 40px; right: 0; left: 20px; }', { }, done);
+    });
+    it('test position shortcut with mixed value', function (done) {
+      test('a{ top: left 20% right inherit bottom 40px zi 123; }',
+           'a{ top: 0; z-index: 123; bottom: 40px; right: inherit; left: 20%; }', { }, done);
+    });
+
+    it('simple test position shortcut', function (done) {
+      test('a{ top: 123px; }',
+           'a{ top: 123px; }', { }, done);
+    });
+
+    it('simple test 2 position shortcut', function (done) {
+      test('a{ bottom: 123px zi left; }',
+           'a{ bottom: 123px; left: 0; z-index: 0; }', { }, done);
+    });
+
 
 
 });
