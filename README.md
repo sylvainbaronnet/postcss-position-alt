@@ -82,6 +82,34 @@
 }
 ```
 
+It's also possible to use directly position without position type : 
+
+```css
+
+/* Input example */
+.toto {
+  top: 10px left z-index 100;
+}
+.titi {
+  right: left 10px z-index bottom 1px;
+}
+```
+
+```css
+/* Output example */
+.toto {
+  top: 10px;
+  left: 0;
+  z-index: 100;
+}
+.titi {
+  right: 0;
+  left: 10px;
+  bottom: 1px;
+  z-index: 0;
+}
+```
+
 It support those properties aliases :
 
 ```css
