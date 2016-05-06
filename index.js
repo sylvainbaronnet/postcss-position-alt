@@ -40,6 +40,8 @@ module.exports = postcss.plugin('postcss-position-alt', function (opts) {
           PROP = false,
           VAL  = false;
 
+      if(decl.value !== '0') i = 1;
+
       while (i < 14) {
 
         if (pos[i]) {
