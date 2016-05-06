@@ -10,20 +10,30 @@ module.exports = postcss.plugin('postcss-position-alt', function (opts) {
   };
 
   return function (css, result) {
-
-    css.walkDecls(/^absolute|relative|fixed/, function (decl) {
+    css.walkDecls(/^(absolute|relative|fixed|top|right|bottom|left|z-index)/, function (decl) {
 
       var pos,
+          isPositionType = /absolute|relative|fixed/.test(decl.prop),
           value = decl.value;
 
-      decl.value = decl.prop;
-      decl.prop  = 'position';
+      if(isPositionType) {
+        decl.value = decl.prop;
+        decl.prop  = 'position';
+      }
+
 
       if (/\s/.test(value)) {
         pos = value.split(/\s/);
       }
+      else if(!isPositionType){
+        return; // simple value
+      }
       else {
         pos = [value];
+      }
+
+      if(!isPositionType) {
+        decl.value = isUnit(pos[0]) ? pos[0] : '0';
       }
 
       var i    = 0,
@@ -61,6 +71,9 @@ module.exports = postcss.plugin('postcss-position-alt', function (opts) {
                        .replace(/b/i, 'bottom')
                        .replace(/r/i, 'right')
                        .replace(/z/i, 'z-index');
+          }
+          else if (PROP.length === 2) {
+            PROP = PROP.replace(/zi/i, 'z-index'); // postcss-crip compatibility
           }
 
           decl.cloneAfter({

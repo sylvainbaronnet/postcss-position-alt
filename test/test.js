@@ -101,4 +101,14 @@ describe('postcss-position-alt', function () {
     });
 
 
+
+
+
+    it('test position shortcut', function (done) {
+      test('a{ top: 10px left 20px right 30px bottom 40px; }',
+           'a{ top: 10px; bottom: 40px; right: 30px; left: 20px; }', { }, done);
+    });
+
+
+
 });

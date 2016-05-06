@@ -86,7 +86,7 @@ It support those properties aliases :
 
 ```css
 .aliases {
-  absolute t 1px l 2px b 3px r 4px z 5
+  absolute t 1px l 2px b 3px r 4px z 5 /* or zi */
 }
 
 /* Output */
