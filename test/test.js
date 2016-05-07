@@ -166,6 +166,15 @@ describe('postcss-position-alt', function () {
            'a{ left: calc(100% / 0.1em); z-index: 9999; bottom: 0; right: calc(88.8% - 2px); }', { }, done);
     });
 
+    it('test multiple calc complex with negative value', function (done) {
+      test('a{ left: -12px right calc(88.8% - 2px) bottom; }',
+           'a{ left: -12px; bottom: 0; right: calc(88.8% - 2px); }', { }, done);
+    });
+    it('test multiple calc complex with negative calc value', function (done) {
+      test('a{ absolute: left -12px right calc(88.8% * -2px) bottom; }',
+           'a{ position: absolute; bottom: 0; right: calc(88.8% * -2px); left -12px; }', { }, done);
+    });
+
 
 
 

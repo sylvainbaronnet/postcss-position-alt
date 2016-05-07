@@ -1,5 +1,4 @@
 'use strict';
-
 var postcss = require('postcss');
 
 module.exports = postcss.plugin('postcss-position-alt', function (opts) {
@@ -14,12 +13,14 @@ module.exports = postcss.plugin('postcss-position-alt', function (opts) {
     if(!/\s/.test(value)) return value;
 
     return value.replace(/\s?\+\s?/g,'+')
-                .replace(/\s?\-\s?/g,'-')
+                .replace(/\s\-\s/g,'-')
                 .replace(/\s?\*\s?/g,'*')
                 .replace(/\s?\/\s?/g,'/');
   };
   var handleCalcBack = function(value) {
     
+    if(!/calc/.test(value)) return value;
+
     return value.replace(/\+/g, ' + ')
                 .replace(/\-/g, ' - ')
                 .replace(/\*/g, ' * ')
@@ -31,7 +32,7 @@ module.exports = postcss.plugin('postcss-position-alt', function (opts) {
 
       var pos,
           isPositionType = /absolute|relative|fixed/.test(decl.prop),
-          value = handleCalc(decl.value); // handle calc() case with space
+          value = handleCalc(decl.value);
 
       if(isPositionType) {
         decl.value = decl.prop;
@@ -43,7 +44,6 @@ module.exports = postcss.plugin('postcss-position-alt', function (opts) {
         pos = value.split(/\s/);
       }
       else if(!isPositionType){
-        // value = handleCalcBack(value)
         return; // simple value
       }
       else {
