@@ -39,7 +39,7 @@
   fixed: top left bottom right z-index 9999;
 }
 .zeta {
-  relative: top var(--some-var) left initial bottom revert;
+  relative: top var(--some-var) left initial bottom revert right calc(100% + 10px);
 }
 ```
 
@@ -79,6 +79,7 @@
   top: var(--some-var);
   left: initial;
   bottom: revert;
+  right: calc(100% + 10px)
 }
 ```
 
