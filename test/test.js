@@ -172,7 +172,7 @@ describe('postcss-position-alt', function () {
     });
     it('test multiple calc complex with negative value 2', function (done) {
       test('a{ absolute: left -12px right calc(88.8% * 2px) bottom; }',
-           'a{ position: absolute; bottom: 0; right: calc(88.8% * 2px); left -12px; }', { }, done);
+           'a{ position: absolute; bottom: 0; right: calc(88.8% * 2px); left: -12px; }', { }, done);
     });
 
 
