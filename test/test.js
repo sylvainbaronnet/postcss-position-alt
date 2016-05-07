@@ -170,9 +170,9 @@ describe('postcss-position-alt', function () {
       test('a{ left: -12px right calc(88.8% - 2px) bottom; }',
            'a{ left: -12px; bottom: 0; right: calc(88.8% - 2px); }', { }, done);
     });
-    it('test multiple calc complex with negative calc value', function (done) {
-      test('a{ absolute: left -12px right calc(88.8% * -2px) bottom; }',
-           'a{ position: absolute; bottom: 0; right: calc(88.8% * -2px); left -12px; }', { }, done);
+    it('test multiple calc complex with negative value 2', function (done) {
+      test('a{ absolute: left -12px right calc(88.8% * 2px) bottom; }',
+           'a{ position: absolute; bottom: 0; right: calc(88.8% * 2px); left -12px; }', { }, done);
     });
 
 
