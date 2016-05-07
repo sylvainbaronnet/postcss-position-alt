@@ -21,8 +21,11 @@ module.exports = postcss.plugin('postcss-position-alt', function (opts) {
     
     if(!/calc/.test(value)) return value;
 
+    if(!/\+|\*|\//.test(value)) {
+      value = value.replace(/\-/g, ' - ')
+    }
+
     return value.replace(/\+/g, ' + ')
-                .replace(/\-/g, ' - ')
                 .replace(/\*/g, ' * ')
                 .replace(/\//g, ' / ');
   };
