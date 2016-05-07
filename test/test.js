@@ -129,5 +129,44 @@ describe('postcss-position-alt', function () {
     });
 
 
+    it('test calc simple +', function (done) {
+      test('a{ left: calc(100% + 10px); }',
+           'a{ left: calc(100% + 10px); }', { }, done);
+    });
+
+    it('test calc simple -', function (done) {
+      test('a{ left: calc(100% - 10px); }',
+           'a{ left: calc(100% - 10px); }', { }, done);
+    });
+
+    it('test calc simple /', function (done) {
+      test('a{ left: calc(100% / 10px); }',
+           'a{ left: calc(100% / 10px); }', { }, done);
+    });
+
+    it('test calc simple *', function (done) {
+      test('a{ left: calc(100% * 10px); }',
+           'a{ left: calc(100% * 10px); }', { }, done);
+    });
+
+    it('test calc multiple operator', function (done) {
+      test('a{ left: calc(100% * 10px + 12em / 2 - 0.5); }',
+           'a{ left: calc(100% * 10px + 12em / 2 - 0.5); }', { }, done);
+    });
+
+
+
+    it('test multiple calc', function (done) {
+      test('a{ left: calc(100% + 10px) right calc(88.8% - 2px); }',
+           'a{ left: calc(100% + 10px); right: calc(88.8% - 2px); }', { }, done);
+    });
+
+    it('test multiple calc complex', function (done) {
+      test('a{ left: calc(100% / 0.1em) right calc(88.8% - 2px) bottom zi 9999; }',
+           'a{ left: calc(100% / 0.1em); z-index: 9999; bottom: 0; right: calc(88.8% - 2px); }', { }, done);
+    });
+
+
+
 
 });

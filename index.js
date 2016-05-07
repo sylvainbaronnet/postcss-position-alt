@@ -6,7 +6,24 @@ module.exports = postcss.plugin('postcss-position-alt', function (opts) {
   opts = opts || {};
 
   var isUnit = function (value) {
-    return (/\d/.test(value) || /^var|auto|inherit|initial|revert|center/i.test(value));
+    return (/\d/.test(value) || /^var|auto|inherit|initial|revert|center|calc/i.test(value));
+  };
+
+  var handleCalc = function(value) {
+    
+    if(!/\s/.test(value)) return value;
+
+    return value.replace(/\s?\+\s?/g,'+')
+                .replace(/\s?\-\s?/g,'-')
+                .replace(/\s?\*\s?/g,'*')
+                .replace(/\s?\/\s?/g,'/');
+  };
+  var handleCalcBack = function(value) {
+    
+    return value.replace(/\+/g, ' + ')
+                .replace(/\-/g, ' - ')
+                .replace(/\*/g, ' * ')
+                .replace(/\//g, ' / ');
   };
 
   return function (css, result) {
@@ -14,7 +31,7 @@ module.exports = postcss.plugin('postcss-position-alt', function (opts) {
 
       var pos,
           isPositionType = /absolute|relative|fixed/.test(decl.prop),
-          value = decl.value;
+          value = handleCalc(decl.value); // handle calc() case with space
 
       if(isPositionType) {
         decl.value = decl.prop;
@@ -26,6 +43,7 @@ module.exports = postcss.plugin('postcss-position-alt', function (opts) {
         pos = value.split(/\s/);
       }
       else if(!isPositionType){
+        // value = handleCalcBack(value)
         return; // simple value
       }
       else {
@@ -33,7 +51,7 @@ module.exports = postcss.plugin('postcss-position-alt', function (opts) {
       }
 
       if(!isPositionType) {
-        decl.value = isUnit(pos[0]) ? pos[0] : '0';
+        decl.value = isUnit(pos[0]) ? handleCalcBack(pos[0]) : '0';
       }
 
       var i    = 0,
@@ -77,6 +95,8 @@ module.exports = postcss.plugin('postcss-position-alt', function (opts) {
           else if (PROP.length === 2) {
             PROP = PROP.replace(/zi/i, 'z-index'); // postcss-crip compatibility
           }
+
+          VAL = handleCalcBack(VAL);
 
           decl.cloneAfter({
             prop: PROP,
