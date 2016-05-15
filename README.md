@@ -135,10 +135,21 @@ It support those properties aliases :
 .full {
   fixed: full;
 }
+.full2 {
+  absolute: full z 99999;
+}
 
 /* Output */
 .full {
   position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.full2 {
+  position: absolute;
+  z-index: 99999;
   top: 0;
   right: 0;
   bottom: 0;
