@@ -130,8 +130,13 @@ It support those properties aliases :
 ```
 
 
-`fixed: full;` keyword, expand to :
+`full` keyword, expand to :
 ```css
+.full {
+  fixed: full;
+}
+
+/* Output */
 .full {
   position: fixed;
   top: 0;
