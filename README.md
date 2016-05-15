@@ -130,7 +130,7 @@ It support those properties aliases :
 ```
 
 
-`full` keyword, expand to :
+`full` keyword :
 ```css
 .full {
   fixed: full;
