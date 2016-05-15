@@ -1,8 +1,13 @@
 
 
+# Version 0.4.2
+
+- Add `full` keyword
+
+
 # Version 0.4.1
 
-- Add support for calc() value
+- Add support for `calc()` value
 
 
 # Version 0.4

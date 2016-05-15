@@ -63,9 +63,17 @@ module.exports = postcss.plugin('postcss-position-alt', function (opts) {
 
       if(!isPositionType && decl.value !== '0') i = 1;
 
-      while (i < 14) {
-
-        if (pos[i]) {
+      while (i < 15) {
+        
+        if (pos[i] && pos[i] === 'full') {
+          
+          decl.cloneAfter({ prop: 'top',    value: '0' });
+          decl.cloneAfter({ prop: 'right',  value: '0' });
+          decl.cloneAfter({ prop: 'bottom', value: '0' });
+          decl.cloneAfter({ prop: 'left',   value: '0' });
+          i++;
+        }
+        else if (pos[i]) {
           if (!PROP && !isUnit(pos[i])) {
             PROP = pos[i];
             i++;

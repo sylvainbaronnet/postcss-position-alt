@@ -176,6 +176,16 @@ describe('postcss-position-alt', function () {
     });
 
 
+    it('test simple `full` keyword', function (done) {
+      test('a{ absolute: full; }',
+           'a{ position: absolute; left: 0; bottom: 0; right: 0; top: 0; }', { }, done);
+    });
+    it('test `full` keyword with z-index', function (done) {
+      test('a{ fixed: full zi 99999; }',
+           'a{ position: fixed; z-index: 99999; left: 0; bottom: 0; right: 0; top: 0; }', { }, done);
+    });
+
+
 
 
 });

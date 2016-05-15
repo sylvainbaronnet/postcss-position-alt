@@ -129,6 +129,18 @@ It support those properties aliases :
 }
 ```
 
+
+`fixed: full;` keyword, expand to :
+```css
+.full {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+```
+
 It works with [postcss-center](https://github.com/jedmao/postcss-center) :
 
 ```css
