@@ -1,6 +1,6 @@
 
 
-# Version 0.4.2
+# Version 0.5.0
 
 - Add `full` keyword
 
