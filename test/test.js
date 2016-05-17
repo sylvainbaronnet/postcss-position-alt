@@ -142,7 +142,7 @@ describe('postcss-position-alt', function () {
            'a{ bottom: 0; left: 0; }', { }, done);
     });
     it('simple test very simple position 2 shortcut', function (done) {
-      test('a{ right left auto; }',
+      test('a{ right: left auto; }',
            'a{ right: 0; left: auto; }', { }, done);
     });
 
