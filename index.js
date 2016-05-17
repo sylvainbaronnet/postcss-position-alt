@@ -47,12 +47,12 @@ module.exports = postcss.plugin('postcss-position-alt', function (opts) {
         pos = value.split(/\s/); // multiple values, split with space
       }
       else if(!isPositionType){ // simple value (no space and not abs, rel, fixed prop)
-        if(!isUnit(value)) { // ex: left: bottom;
+        if(!isUnit(value)) { // (left: bottom)
           decl.value = '0';
           pos = [value];
         }
         else{
-          return; // no change needed (ex : left: 12px)
+          return; // no change needed (left: 12px)
         }
       }
       else {
@@ -66,12 +66,12 @@ module.exports = postcss.plugin('postcss-position-alt', function (opts) {
 
 
       if(!isPositionType) { 
-        // if NOT abs, rel or fixed and first value isUnit (ex: left 1px right 2px)
-        if(isUnit(pos[0])) { // ex: left: 12px right 34px
+        // if NOT abs, rel or fixed and first value isUnit (left: 1px right 2px)
+        if(isUnit(pos[0])) {
           decl.value = handleCalcBack(pos[0]);
           i++;
         }
-        else { // ex: left: right 34px
+        else { // (left: right 34px)
           decl.value = '0';
         }
       }
