@@ -47,7 +47,13 @@ module.exports = postcss.plugin('postcss-position-alt', function (opts) {
         pos = value.split(/\s/); // multiple values, split with space
       }
       else if(!isPositionType){ // simple value (no space and not abs, rel, fixed prop)
-        return; // no change needed (ex : left: 12px)
+        if(!isUnit(value)) { // ex: left: bottom;
+          decl.value = '0';
+          pos = [value];
+        }
+        else{
+          return; // no change needed (ex : left: 12px)
+        }
       }
       else {
         pos = [value]; // simple value (absolute: left)
