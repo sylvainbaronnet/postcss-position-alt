@@ -1,5 +1,9 @@
 
 
+# Version 0.5.1
+
+- Fixed case: `left: right auto` and `left: right`
+
 # Version 0.5.0
 
 - Add `full` keyword
