@@ -161,7 +161,7 @@ It works with [postcss-center](https://github.com/jedmao/postcss-center) :
 
 ```css
 .center {
-  absolute left center top center
+  absolute: left center top center
 }
 
 ```
