@@ -15,6 +15,15 @@ var test = function (input, output, opts, done) {
 
 describe('postcss-position-alt', function () {
 
+    it('test very simple position absolute', function (done) {
+      test('a{ absolute: left; }',
+           'a{ position: absolute; left: 0; }', { }, done);
+    });
+    it('test very simple position absolute 2', function (done) {
+      test('a{ absolute: left z; }',
+           'a{ position: absolute; z-index: 0; left: 0; }', { }, done);
+    });
+
     it('test position absolute', function (done) {
       test('a{ absolute: top 10px left 20px right 30px bottom 40px; }',
            'a{ position: absolute; bottom: 40px; right: 30px; left: 20px; top: 10px; }', { }, done);
@@ -126,6 +135,15 @@ describe('postcss-position-alt', function () {
     it('simple test 2 position shortcut', function (done) {
       test('a{ bottom: 123px zi left; }',
            'a{ bottom: 123px; left: 0; z-index: 0; }', { }, done);
+    });
+
+    it('simple test very simple position shortcut', function (done) {
+      test('a{ bottom: left; }',
+           'a{ bottom: 0; left: 0; }', { }, done);
+    });
+    it('simple test very simple position 2 shortcut', function (done) {
+      test('a{ right left auto; }',
+           'a{ right: 0; left: auto; }', { }, done);
     });
 
 
