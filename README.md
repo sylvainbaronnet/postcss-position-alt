@@ -4,7 +4,7 @@
   title="Philosopher’s stone, logo of PostCSS"
   src="http://postcss.github.io/postcss/logo-leftp.png">
 
-[![NPM version][npm-image]][npm-url] [![Build Status][ci-img]][ci] [![Dependency Status][daviddm-image]][daviddm-url]
+[![Build Status][ci-img]][ci] [![Dependency Status][daviddm-image]][daviddm-url]
 
 [![npm](https://nodei.co/npm/postcss-position-alt.svg?)](https://nodei.co/npm/postcss-position-alt/)
 
@@ -165,7 +165,7 @@ It works with [postcss-center](https://github.com/jedmao/postcss-center) :
 }
 ```
 
-You ca use the `center` keyword :
+You can use the `center` keyword :
 
 ```css
 .center {
@@ -192,6 +192,17 @@ postcss([ require('postcss-position-alt') ])
 See [PostCSS] docs for examples for your environment.
 
 
+## Changelog
+
+[Changelog](CHANGELOG.md)
+
+
+## License
+
+MIT © Sylvain Baronnet for [Studio.gd](http://studio.gd)
+
+
 ## Alternative 
 
 *See [postcss-position](https://github.com/seaneking/postcss-position) for an alternative shorthand syntax.*
+
