@@ -161,9 +161,23 @@ It works with [postcss-center](https://github.com/jedmao/postcss-center) :
 
 ```css
 .center {
-  absolute: left center top center
+  absolute: left center top center;
+}
+```
+
+You ca use the `center` keyword :
+
+```css
+.center {
+  absolute: center z-index 99;
 }
 
+// output {
+  position: absolute;
+  top: center;
+  left: center;
+  z-index: 99;
+}
 ```
 
 postcss-center must be applied _after_ postcss-position-alt

@@ -202,4 +202,21 @@ describe('postcss-position-alt', function () {
   });
 
 
+
+
+  it('test `center` keyword', function (done) {
+    test('a{ fixed: center; }',
+         'a{ position: fixed; left: center; top: center; }', { }, done);
+  });
+
+  it('test `center` keyword with z-index', function (done) {
+    test('a{ fixed: center zi 99999; }',
+         'a{ position: fixed; z-index: 99999; left: center; top: center; }', { }, done);
+  });
+  it('test `center` keyword with z-index no value', function (done) {
+    test('a{ absolute: center zi; }',
+         'a{ position: absolute; z-index: 0; left: center; top: center; }', { }, done);
+  });
+
+
 });

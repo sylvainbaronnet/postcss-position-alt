@@ -1,5 +1,9 @@
 
 
+# Version 0.6.0
+
+- Add `center` keyword
+
 # Version 0.5.1
 
 - Fixed case: `left: right auto` and `left: right`
