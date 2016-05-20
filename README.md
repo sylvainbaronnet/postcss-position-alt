@@ -172,7 +172,8 @@ You can use the `center` keyword :
   absolute: center z-index 99;
 }
 
-// output {
+/* Output */
+.center {
   position: absolute;
   top: center;
   left: center;
