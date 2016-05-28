@@ -22,7 +22,6 @@
 
 ```css
 
-/* Input example */
 .alpha {
   absolute: top left;
 }
@@ -41,9 +40,7 @@
 .zeta {
   relative: top var(--some-var) left initial bottom revert right calc(100% + 10px);
 }
-```
 
-```css
 /* Output example */
 .alpha {
   position: absolute;
@@ -86,17 +83,14 @@
 It's also possible to use directly position without position type : 
 
 ```css
-
-/* Input example */
 .toto {
   top: 10px left z-index 100;
 }
 .titi {
   right: left 10px z-index bottom 1px;
 }
-```
 
-```css
+
 /* Output example */
 .toto {
   top: 10px;
