@@ -41,7 +41,7 @@
   relative: top var(--some-var) left initial bottom revert right calc(100% + 10px);
 }
 
-/* Output example */
+/* Output */
 .alpha {
   position: absolute;
   top: 0;
@@ -90,8 +90,7 @@ It's also possible to use directly position without position type :
   right: left 10px z-index bottom 1px;
 }
 
-
-/* Output example */
+/* Output */
 .toto {
   top: 10px;
   left: 0;
