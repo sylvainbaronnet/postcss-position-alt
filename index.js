@@ -8,34 +8,13 @@ module.exports = postcss.plugin('postcss-position-alt', function (opts) {
     return (/\d/.test(value) || /^var|auto|inherit|initial|revert|center|calc/i.test(value));
   };
 
-  var handleCalc = function(value) {
-    
-    if(!/\s/.test(value)) return value;
-
-    return value.replace(/\s?\+\s?/g,'+')
-                .replace(/\s\-\s/g,'-')
-                .replace(/\s?\*\s?/g,'*')
-                .replace(/\s?\/\s?/g,'/');
-  };
-  var handleCalcBack = function(value) {
-    
-    if(!/calc/.test(value)) return value;
-
-    if(!/\+|\*|\//.test(value)) {
-      value = value.replace(/\-/g, ' - ')
-    }
-
-    return value.replace(/\+/g, ' + ')
-                .replace(/\*/g, ' * ')
-                .replace(/\//g, ' / ');
-  };
-
   return function (css, result) {
     css.walkDecls(/^(absolute|relative|fixed|top|right|bottom|left|z-index)/, function (decl) {
 
-      var pos,
+      var pos = [],
           isPositionType = /absolute|relative|fixed/.test(decl.prop),
-          value = handleCalc(decl.value);
+          value = decl.value,
+          m = void 0;
 
       if(isPositionType) {
         decl.value = decl.prop;
@@ -43,20 +22,30 @@ module.exports = postcss.plugin('postcss-position-alt', function (opts) {
       }
 
 
-      if (/\s/.test(value)) {
-        pos = value.split(/\s/); // multiple values, split with space
+      if (/\s/.test(value)) { // multiple values, split with space
+
+        var re = /(([\+\-]?[0-9\.]+)(%|px|pt|rem|em|in|cm|mm|ex|pc|vw|vh)?)|(calc\(([^\)]+)\))|(\-\-var\(([^\)]+)\))|(inherit|initial|revert|auto|center)/g,
+            m = void 0;
+
+        while ((m = re.exec(decl.value)) !== null) {
+          if (m.index === re.lastIndex) {
+            re.lastIndex++;
+          }
+          pos.push(m[0]);
+        }
       }
       else if(!isPositionType){ // simple value (no space and not abs, rel, fixed prop)
         if(!isUnit(value)) { // (left: bottom)
           decl.value = '0';
           pos = [value];
+          pos.push(value);
         }
         else{
           return; // no change needed (left: 12px)
         }
       }
       else {
-        pos = [value]; // simple value (absolute: left)
+        pos.push(value); // simple value (absolute: left)
       }
 
 
@@ -64,11 +53,10 @@ module.exports = postcss.plugin('postcss-position-alt', function (opts) {
           PROP = false,
           VAL  = false;
 
-
       if(!isPositionType) { 
         // if NOT abs, rel or fixed and first value isUnit (left: 1px right 2px)
         if(isUnit(pos[0])) {
-          decl.value = handleCalcBack(pos[0]);
+          decl.value = pos[0];
           i++;
         }
         else { // (left: right 34px)
@@ -126,7 +114,7 @@ module.exports = postcss.plugin('postcss-position-alt', function (opts) {
             PROP = PROP.replace(/zi/i, 'z-index'); // postcss-crip compatibility
           }
 
-          VAL = handleCalcBack(VAL);
+          VAL = VAL;
 
           decl.cloneAfter({
             prop: PROP,
