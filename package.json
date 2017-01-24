@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/sylvainbaronnet/postcss-position-alt",
   "dependencies": {
-    "postcss": "^5.2.8"
+    "postcss": "^5.2.11"
   },
   "devDependencies": {
     "chai": "^3.5.0",
