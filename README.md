@@ -14,7 +14,7 @@
 [ci-img]:  https://travis-ci.org/sylvainbaronnet/postcss-position-alt.svg
 [ci]:      https://travis-ci.org/sylvainbaronnet/postcss-position-alt
 [npm-url]: https://www.npmjs.com/package/postcss-position-alt
-[npm-image]: https://badge.fury.io/js/postcss-position.svg
+[npm-image]: https://badge.fury.io/js/postcss-position-alt.svg
 [daviddm-image]: https://david-dm.org/sylvainbaronnet/postcss-position-alt.svg
 [daviddm-url]: https://david-dm.org/sylvainbaronnet/postcss-position-alt
 
@@ -80,7 +80,7 @@
 }
 ```
 
-It's also possible to use directly position without position type : 
+It's also possible to use directly position without position type :
 
 ```css
 .toto {
@@ -196,7 +196,7 @@ See [PostCSS] docs for examples for your environment.
 MIT © Sylvain Baronnet for [Studio.gd](http://studio.gd)
 
 
-## Alternative 
+## Alternative
 
 *See [postcss-position](https://github.com/seaneking/postcss-position) for an alternative shorthand syntax.*
 
