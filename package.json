@@ -21,13 +21,13 @@
   },
   "homepage": "https://github.com/sylvainbaronnet/postcss-position-alt",
   "dependencies": {
-    "postcss": "^5.2.14"
+    "postcss": "^6.0.1"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
+    "chai": "^4.0.0",
     "gulp": "^3.9.1",
     "gulp-eslint": "^3.0.1",
-    "gulp-mocha": "^3.0.1"
+    "gulp-mocha": "^4.3.1"
   },
   "scripts": {
     "test": "gulp"
