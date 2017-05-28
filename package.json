@@ -1,6 +1,6 @@
 {
   "name": "postcss-position-alt",
-  "version": "0.6.3",
+  "version": "0.6.4",
   "description": "PostCSS plugin that adds shorthand to position declarations",
   "keywords": [
     "postcss",
@@ -24,7 +24,7 @@
     "postcss": "^6.0.1"
   },
   "devDependencies": {
-    "chai": "^4.0.0",
+    "chai": "^3.5.0",
     "gulp": "^3.9.1",
     "gulp-eslint": "^3.0.1",
     "gulp-mocha": "^4.3.1"
