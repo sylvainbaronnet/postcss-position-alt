@@ -114,16 +114,13 @@ module.exports = postcss.plugin('postcss-position-alt', function (opts) {
 
         if (PROP !== false && VAL !== false) {
 
-          if (PROP.length === 1) {
+          if (PROP.length <= 2) {
             
             PROP = PROP.replace(/t/i, 'top')
-                       .replace(/l/i, 'left')
-                       .replace(/b/i, 'bottom')
                        .replace(/r/i, 'right')
-                       .replace(/z/i, 'z-index');
-          }
-          else if (PROP.length === 2) {
-            PROP = PROP.replace(/zi/i, 'z-index'); // postcss-crip compatibility
+                       .replace(/b/i, 'bottom')
+                       .replace(/l/i, 'left')
+                       .replace(/zi|z/i, 'z-index');
           }
 
           VAL = handleCalcBack(VAL);
