@@ -31,7 +31,7 @@ module.exports = postcss.plugin('postcss-position-alt', function (opts) {
   };
 
   return function (css, result) {
-    css.walkDecls(/^(absolute|relative|fixed|top|right|bottom|left|z-index)/, function (decl) {
+    css.walkDecls(/^(absolute|relative|fixed|sticky|top|right|bottom|left|z-index)/, function (decl) {
 
       var pos,
           isPositionType = /absolute|relative|fixed/.test(decl.prop),
