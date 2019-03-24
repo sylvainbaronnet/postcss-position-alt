@@ -131,6 +131,9 @@ It support those properties aliases :
 .full2 {
   absolute: full z 99999;
 }
+.full3 {
+  fixed: full 10px z 99999;
+}
 
 /* Output */
 .full {
@@ -147,6 +150,14 @@ It support those properties aliases :
   right: 0;
   bottom: 0;
   left: 0;
+}
+.full3 {
+  position: absolute;
+  z-index: 99999;
+  top: 10px;
+  right: 10px;
+  bottom: 10px;
+  left: 10px;
 }
 ```
 
