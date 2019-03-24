@@ -3,7 +3,7 @@
 
 - Upgraded dependencies
 - Added optional value to `full` keyword (thanks to @dkrutsko for the suggestion)
-- Updated test and documentation
+- Updated tests and documentation
 
 # Version 0.6.0
 

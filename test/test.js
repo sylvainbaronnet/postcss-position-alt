@@ -225,4 +225,38 @@ describe('postcss-position-alt', function () {
   });
 
 
+  it('test `x` keyword', function (done) {
+    test('a{ absolute: x 10px; }',
+         'a{ position: absolute; left: 10px; right: 10px; }', { }, done);
+  });
+  it('test `horizontal` keyword', function (done) {
+    test('a{ absolute: horizontal 10px; }',
+         'a{ position: absolute; left: 10px; right: 10px; }', { }, done);
+  });
+  it('test `y` keyword', function (done) {
+    test('a{ absolute: y 10px; }',
+         'a{ position: absolute; top: 10px; bottom: 10px; }', { }, done);
+  });
+  it('test `vertical` keyword', function (done) {
+    test('a{ absolute: vertical 10px; }',
+         'a{ position: absolute; top: 10px; bottom: 10px; }', { }, done);
+  });
+  it('test `x`, `y`, `z` keyword', function (done) {
+    test('a{ sticky: x 10% y 20rem z 99; }',
+         'a{ position: sticky; z-index: 99; top: 20rem; bottom: 20rem; left: 10%; right: 10%; }', { }, done);
+  });
+  it('test2 `x`, `y`, `z` keyword', function (done) {
+    test('a{ absolute: x y z 99; }',
+         'a{ position: absolute; z-index: 99; top: 0; bottom: 0; left: 0; right: 0; }', { }, done);
+  });
+  it('test `vertical`, `horizontal` keyword', function (done) {
+    test('a{ fixed: horizontal auto vertical inherit; }',
+         'a{ position: fixed; top: inherit; bottom: inherit; left: auto; right: auto; }', { }, done);
+  });
+
+  it('test position sticky', function (done) {
+    test('a{ sticky: top 10px left 20px right 30px bottom 40px; }',
+         'a{ position: sticky; bottom: 40px; right: 30px; left: 20px; top: 10px; }', { }, done);
+  });
+
 });

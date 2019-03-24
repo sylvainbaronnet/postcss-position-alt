@@ -34,14 +34,13 @@ module.exports = postcss.plugin('postcss-position-alt', function (opts) {
     css.walkDecls(/^(absolute|relative|fixed|sticky|top|right|bottom|left|z-index)/, function (decl) {
 
       var pos,
-          isPositionType = /absolute|relative|fixed/.test(decl.prop),
+          isPositionType = /absolute|relative|fixed|sticky/.test(decl.prop),
           value = handleCalc(decl.value);
 
       if(isPositionType) {
         decl.value = decl.prop;
         decl.prop  = 'position';
       }
-
 
       if (/\s/.test(value)) {
         pos = value.split(/\s/); // multiple values, split with space
@@ -59,11 +58,9 @@ module.exports = postcss.plugin('postcss-position-alt', function (opts) {
         pos = [value]; // simple value (absolute: left)
       }
 
-
       var i    = 0,
           PROP = false,
           VAL  = false;
-
 
       if(!isPositionType) { 
         // if NOT abs, rel or fixed and first value isUnit (left: 1px right 2px)
@@ -78,7 +75,7 @@ module.exports = postcss.plugin('postcss-position-alt', function (opts) {
 
       while (i < 15) {
         
-        if (i === 0 && pos[i] && pos[i] === 'full') {
+        if (pos[i] && pos[i] === 'full') {
            
           var fullValue = '0';
           if(isUnit(pos[i + 1])) {
@@ -92,10 +89,34 @@ module.exports = postcss.plugin('postcss-position-alt', function (opts) {
           decl.cloneAfter({ prop: 'left',   value: fullValue });
           i++;
         }
-        else if (i === 0 && pos[i] && pos[i] === 'center') {
+        else if (pos[i] && pos[i] === 'center') {
           
           decl.cloneAfter({ prop: 'top',   value: 'center' });
           decl.cloneAfter({ prop: 'left',  value: 'center' });
+          i++;
+        }
+        else if (pos[i] && pos[i] === 'x' || pos[i] === 'horizontal') {
+          
+          var xValue = '0';
+          if(isUnit(pos[i + 1])) {
+            xValue = pos[i + 1];
+            i++;
+          }
+
+          decl.cloneAfter({ prop: 'right', value: xValue });
+          decl.cloneAfter({ prop: 'left',  value: xValue });
+          i++;
+        }
+        else if (pos[i] && pos[i] === 'y' || pos[i] === 'vertical') {
+          
+          var yValue = '0';
+          if(isUnit(pos[i + 1])) {
+            yValue = pos[i + 1];
+            i++;
+          }
+
+          decl.cloneAfter({ prop: 'bottom',  value: yValue });
+          decl.cloneAfter({ prop: 'top', value: yValue });
           i++;
         }
         else if (pos[i]) {

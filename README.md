@@ -161,6 +161,51 @@ It support those properties aliases :
 }
 ```
 
+`horizontal` or `x` and `vertical` or `y` keywords (since `0.7.0`) :
+```css
+.horizontal {
+  fixed: horizontal 10px;
+}
+.vertical {
+  absolute: vertical z 99;
+}
+.xyz {
+  absolute: x 10px y 20px z 99;
+}
+.xyz2 {
+  fixed: x y z;
+}
+
+/* Output */
+.horizontal {
+  position: fixed;
+  right: 10px;
+  left: 10px;
+}
+.vertical {
+  position: absolute;
+  z-index: 99;
+  top: 0;
+  bottom: 0;
+}
+.xyz {
+  position: absolute;
+  z-index: 99;
+  top: 20px;
+  right: 10px;
+  bottom: 20px;
+  left: 10px;
+}
+.xyz2 {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+```
+
 It works with [postcss-center](https://github.com/jedmao/postcss-center) :
 
 ```css
